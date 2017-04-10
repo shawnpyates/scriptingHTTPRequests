@@ -2,10 +2,10 @@ const https = require('https');
 let arg = process.argv[2];
 
 function getAndPrintHTML(options) {
-  let optionsSplit = options.split("/");
-  let joinPath = optionsSplit.slice(1).join("/");
+  let splitOptions = options.split("/");
+  let joinPath = splitOptions.slice(1).join("/");
   let requestOptions = {
-  host: `${optionsSplit[0]}`,
+  host: `${splitOptions[0]}`,
   path: `/${joinPath}`
   }
   https.get(requestOptions, (response) => {
